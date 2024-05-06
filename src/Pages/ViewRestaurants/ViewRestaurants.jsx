@@ -128,6 +128,19 @@ const ViewRestaurants = () => {
         ...restaurants,
         { id: snapshot.ref.name, ...restData, imageUrl: imgUrl },
       ]);
+
+      // Reset the state of newRestaurant to its initial empty values
+      setNewRestaurant({
+        name: "",
+        address: "",
+        phone: "",
+        rating: "",
+        res_timming_mon_to_fri: "",
+        res_timming_sat_and_sun: "",
+        image: null,
+        imageUrl: "",
+      });
+
       setLoading(false);
       handleCloseAddModal();
       Swal.fire("Added!", "Restaurant has been added successfully.", "success");
@@ -180,9 +193,12 @@ const ViewRestaurants = () => {
       }
       setLoading(false);
       handleCloseUpdateModal();
-      Swal.fire("Updated!", "Restaurant has been updated successfully.", "success");
-    }
-    catch (error) {
+      Swal.fire(
+        "Updated!",
+        "Restaurant has been updated successfully.",
+        "success"
+      );
+    } catch (error) {
       console.error("Error updating restaurant:", error);
       Swal.fire("Error!", "Failed to update restaurant.", "error");
       setLoading(false);
