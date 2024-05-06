@@ -213,13 +213,13 @@ const Navbar = (props) => {
                     Hello, {user.displayName}
                   </Typography>
                 </MenuItem>
-                <MenuItem onClick={showLogoutModal}>
-                  <ExitToAppIcon fontSize="small" />
-                  <Typography variant="inherit">Logout</Typography>
-                </MenuItem>
                 <MenuItem onClick={toggleCartPopup}>
                   <ShoppingCartIcon fontSize="small" />
                   <Typography variant="inherit">Order Cart</Typography>
+                </MenuItem>
+                <MenuItem onClick={showLogoutModal}>
+                  <ExitToAppIcon fontSize="small" />
+                  <Typography variant="inherit">Logout</Typography>
                 </MenuItem>
               </Menu>
             </span>

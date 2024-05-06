@@ -47,7 +47,7 @@ const MenuCategory = () => {
     },
     {
       name: "Ice-cream",
-      image: "/assets/ Icecream.png",
+      image: "/assets/Icecream.png",
     },
     {
       name: "SoftDrink",
@@ -71,7 +71,7 @@ const MenuCategory = () => {
     },
     {
       name: "Ice-cream",
-      image: "/assets/ Icecream.png",
+      image: "/assets/Icecream.png",
     },
     {
       name: "SoftDrink",
