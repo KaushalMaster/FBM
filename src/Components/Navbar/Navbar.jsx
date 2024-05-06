@@ -13,7 +13,6 @@ import {
   MenuItem,
   IconButton,
   TextField,
-  // Import Dialog component from Material-UI
   DialogContent,
 } from "@mui/material";
 import { auth, db, firestore } from "../../Config/firebase-config";
@@ -203,24 +202,25 @@ const Navbar = (props) => {
           />
           {isLoggedIn && (
             <span>
-              <Typography variant="body1">{user.displayName}</Typography>
+              {/* <Typography variant="body1">{user.displayName}</Typography> */}
               <Menu
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}
                 onClose={closeProfileMenu}
               >
-                {isLoggedIn && (
-                  <div>
-                    <MenuItem onClick={showLogoutModal}>
-                      <ExitToAppIcon fontSize="small" />
-                      <Typography variant="inherit">Logout</Typography>
-                    </MenuItem>
-                    <MenuItem onClick={toggleCartPopup}>
-                      <ShoppingCartIcon fontSize="small" />
-                      <Typography variant="inherit">Order Cart</Typography>
-                    </MenuItem>
-                  </div>
-                )}
+                <MenuItem>
+                  <Typography variant="inherit">
+                    Hello, {user.displayName}
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={showLogoutModal}>
+                  <ExitToAppIcon fontSize="small" />
+                  <Typography variant="inherit">Logout</Typography>
+                </MenuItem>
+                <MenuItem onClick={toggleCartPopup}>
+                  <ShoppingCartIcon fontSize="small" />
+                  <Typography variant="inherit">Order Cart</Typography>
+                </MenuItem>
               </Menu>
             </span>
           )}
