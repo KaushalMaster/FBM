@@ -1,0 +1,205 @@
+.b {
+  display: flex;
+  flex-direction: column;
+}
+.main_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: whitesmoke;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo_img {
+  margin-top: 10px;
+  margin-left: 20%;
+}
+
+@media (max-width: 768px) {
+  .main_container {
+    padding: 0 10px;
+  }
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+}
+
+.search_icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  margin-left: 5px;
+}
+
+.search_input {
+  padding: 8px;
+  padding-left: 40px;
+  background: #d9d9d9;
+  border: none;
+  border-radius: 5px;
+  width: 250px; /* adjust width as needed */
+  outline: none;
+}
+
+.search_btn {
+  background-color: #fbd94b;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 120px;
+}
+
+.profile > .cart-icon {
+  position: relative;
+  right: 20px;
+  top: 4px;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.profilePic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 100px;
+}
+
+.profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.userProfile {
+  display: inline-flex;
+  gap: 10px;
+  flex-direction: row-reverse;
+  justify-content: center;
+  place-items: center;
+}
+
+.filtered_Restaurants {
+  width: 100%;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 1024px) {
+  .profile {
+    right: 50px;
+  }
+  .filtered_Restaurants {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .filtered_Restaurants > .restaurant {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .searchBar {
+    width: 70%; /* Adjust the width of the search bar */
+  }
+
+  .search_input {
+    width: 40%; /* Adjust the width of the search input */
+    position: relative;
+    left: 80px;
+  }
+
+  .search_btn{
+    position: relative;
+    left: 70px;
+  }
+
+  .profile {
+    position: relative; /* Change the position to relative */
+  }
+
+  .cart-icon {
+    display: none; /*Hide the cart icon */
+  }
+
+  .profile > .MuiAvatar-root {
+    margin-left: auto; /* Align the avatar to the right */
+  }
+
+  .profile > .MuiAvatar-root,
+  .profile > span {
+    cursor: pointer; /* Change cursor to pointer for avatar and user name */
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0; /* Align dropdown to the right */
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
+  .profile:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+  }
+}
+
+@media screen and (max-width: 425px){
+  .searchBar {
+    width: 30%; /* Adjust the width of the search input */
+    position: relative;
+    left: -100px;
+    right: 200px;
+    top: 100px;
+  }
+
+  .search_btn{
+    position: relative;
+    left: 70px;
+  }
+  
+}

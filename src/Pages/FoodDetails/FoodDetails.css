@@ -1,0 +1,231 @@
+.food_details {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  width: 60%;
+  align-items: center;
+  /* padding-left: 40px; */
+  position: relative;
+  left: 154px;
+  top: 90px;
+  gap: 30px;
+}
+
+.food_details img {
+  width: 475px;
+  height: 265px;
+  border-radius: 10px;
+  position: relative;
+  top: 20px;
+  left: 100px;
+}
+
+.food_info h2 {
+  position: relative;
+  left: 40px;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.food__description {
+  position: relative;
+  left: 40px;
+}
+
+.food__description p {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.food_info p {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  position: relative;
+  left: 40px;
+}
+
+.content span {
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  top: 28%;
+}
+
+.price_rating {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.quantity {
+  position: relative;
+  top: 15px;
+  /* left: 10px; */
+}
+
+.quantity span {
+  font-size: 20px;
+  font-weight: 500;
+  position: static;
+}
+
+.btn_addtocart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 85%;
+  background: rgb(214, 214, 49);
+  outline: none;
+  border: none;
+  border-radius: 4%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  left: 40px;
+}
+
+.btn_addtocart:hover {
+  background: rgb(185, 185, 22);
+}
+
+/* Button styling */
+.btn_minus,
+.btn_plus {
+  background-color: #f9a826; /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px; /* Adjust margin as needed */
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Button hover effect */
+.btn_minus:hover,
+.btn_plus:hover {
+  background-color: #f18c25; /* Hover background color */
+}
+
+/* CurrencyRupeeIcon size */
+.price_rating .MuiSvgIcon-root {
+  width: 15px; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+  position: relative;
+  top: 3px;
+}
+
+/* Responsive design media query for tablet */
+
+@media screen and (max-width: 768px) {
+  .food_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    left: 0px;
+    top: 70px;
+  }
+
+  .food_details img {
+    /* width: 100%; */
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    top: 20px;
+    left: 0px;
+  }
+
+  .food_info h2 {
+    position: relative;
+    left: 0px;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .food__description {
+    position: relative;
+    left: 0px;
+  }
+
+  .food__description p {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .food_info p {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    left: 20px;
+    right: 20px;
+  }
+
+  .content span {
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    right: 80%;
+    top: 15px;
+  }
+
+  .price_rating {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  .quantity {
+    position: relative;
+    top: -22px;
+  }
+
+  .quantity span {
+    font-size: 20px;
+    font-weight: 500;
+    position: static;
+    padding: 0px 30px;
+  }
+
+  .btn_addtocart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 97%;
+    background: rgb(214, 214, 49);
+    outline: none;
+    border: none;
+    border-radius: 4%;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    left: 10px;
+  }
+
+  .btn_addtocart:hover {
+    background: rgb(185, 185, 22);
+  }
+}

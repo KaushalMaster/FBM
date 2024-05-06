@@ -1,0 +1,56 @@
+.dishes__container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 90px;
+}
+.dishes__container > h1 {
+  position: relative;
+  /* top: 90px; */
+  left: 20px;
+}
+
+/* .dishes__card {
+  display: flex;
+  background-color: antiquewhite;
+  width: 60%;
+  position: relative;
+  top: 100px;
+  left: 40px;
+}
+
+.dishcard__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.dishcard__details h2 {
+  display: flex;
+  flex-direction: column;
+} */
+
+.dish__card {
+  transition: transform 0.3s ease-in-out !important;
+}
+
+.dish__card:hover {
+  transform: scale(1.05);
+}
+
+.dish__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.buy__button {
+  background-color: yellow;
+  color: black;
+}
+
+.buy__button:hover {
+  background: orange;
+}
