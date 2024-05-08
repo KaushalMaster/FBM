@@ -67,7 +67,7 @@
 
 .quantity {
   position: relative;
-  top: 15px;
+  /* top: 15px; */
   /* left: 10px; */
 }
 
@@ -75,6 +75,7 @@
   font-size: 20px;
   font-weight: 500;
   position: static;
+  left: 100px;
 }
 
 .btn_addtocart {

@@ -50,7 +50,7 @@
   flex-direction: column;
   gap: 10px;
   justify-content: center;
-  background: rgba(128, 128, 128, 0.158);
+  /* background: rgba(128, 128, 128, 0.158); */
   border-radius: 10px;
   width: 120px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;

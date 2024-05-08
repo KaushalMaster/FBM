@@ -113,10 +113,7 @@ const FoodDetails = () => {
           <div className="content">
             <div className="price_rating">
               <h3>
-                Price:{" "}
-                <CurrencyRupeeIcon
-                  
-                />
+                Price: <CurrencyRupeeIcon />
                 {dishData.price}
               </h3>
               <span>⭐{dishData.ratings}</span>

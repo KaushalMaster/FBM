@@ -30,52 +30,80 @@ const MenuCategory = () => {
   const menu = [
     // Your menu items...
     {
-      name: "Snacks",
-      image: "/assets/snacks.png",
+      // name: "Snacks",
+      image: "/assets/Paratha.avif",
+    },
+    {
+      // name: "Burger",
+      image: "/assets/Omelette.avif",
+    },
+    {
+      // name: "Pizza",
+      image: "/assets/Idli.avif",
+    },
+    {
+      // name: "Pasta",
+      image: "/assets/Dosa.avif",
+    },
+    {
+      // name: "Ice-cream",
+      image: "/assets/Poori.avif",
+    },
+    {
+      // name: "SoftDrink",
+      image: "/assets/Vada.avif",
+    },
+    {
+      // name: "Snacks",
+      image: "/assets/Thepla.avif",
+    },
+    {
+      // name: "Burger",
+      image: "/assets/Khichdi.avif",
+    },
+    {
+      // name: "Pizza",
+      image: "/assets/Vada_Pav.avif",
+    },
+    {
+      // name: "Pasta",
+      image: "/assets/Cakes.avif",
+    },
+    {
+      // name: "Ice-cream",
+      image: "/assets/Coffee.avif",
+    },
+    {
+      // name: "SoftDrink",
+      image: "/assets/Shakes.avif",
+    },
+    {
+      // name: "SoftDrink",
+      image: "/assets/Salad.avif",
+    },
+    {
+      // name: "SoftDrink",
+      image: "/assets/Tea.avif",
     },
     {
       name: "Burger",
-      image: "/assets/burger.png",
+      image: "/assets/Burger.avif",
     },
     {
-      name: "Pizza",
-      image: "/assets/pizza.png",
+      // name: "SoftDrink",
+      image: "/assets/Pizza.avif",
     },
     {
-      name: "Pasta",
-      image: "/assets/pasta.png",
+      // name: "SoftDrink",
+      image: "/assets/Rolls.avif",
     },
     {
-      name: "Ice-cream",
-      image: "/assets/Icecream.png",
+      // name: "SoftDrink",
+      image: "/assets/Chole_Bature.avif",
     },
     {
-      name: "SoftDrink",
-      image: "/assets/softdrink.png",
-    },
-    {
-      name: "Snacks",
-      image: "/assets/snacks.png",
-    },
-    {
-      name: "Burger",
-      image: "/assets/burger.png",
-    },
-    {
-      name: "Pizza",
-      image: "/assets/pizza.png",
-    },
-    {
-      name: "Pasta",
-      image: "/assets/pasta.png",
-    },
-    {
-      name: "Ice-cream",
-      image: "/assets/Icecream.png",
-    },
-    {
-      name: "SoftDrink",
-      image: "/assets/softdrink.png",
+      // name: "SoftDrink",
+      image: "/assets/Gulab_Jamun.avif",
     },
   ];
 
@@ -113,18 +141,18 @@ const MenuCategory = () => {
       </div>
       <div className="items_container">
         <Swiper
-          // spaceBetween={30}
           slidesPerView={5}
           breakpoints={{
             // when window width is >= 768px (tablet)
             1440: {
-              slidesPerView: 9,
+              slidesPerView: 7,
+              // spaceBetween: 300,
             },
             1024: {
-              slidesPerView: 7,
+              slidesPerView: 4,
             },
             768: {
-              slidesPerView: 5,
+              slidesPerView: 3,
             },
             // when window width is >= 576px (mobile)
             576: {
@@ -135,7 +163,7 @@ const MenuCategory = () => {
               slidesPerView: 2,
             },
             375: {
-              slidesPerView: 2,
+              slidesPerView: 1,
             },
           }}
         >
@@ -149,11 +177,13 @@ const MenuCategory = () => {
                   <img
                     src={item.image}
                     alt={item.name}
-                    width={100}
-                    height={100}
+                    width={200}
+                    // height={100}
                     className="item_image"
                   />
-                  <span className="item_title">{item.name}</span>
+                  <span className="item_title" hidden>
+                    {item.name}
+                  </span>
                 </div>
               </SwiperSlide>
             ))}
