@@ -40,11 +40,13 @@ const ViewRestaurants = () => {
   const [filter, setFilter] = useState("");
   const [newRestaurant, setNewRestaurant] = useState({
     name: "",
-    address: "",
+    city: "",
+    area: "",
     phone: "",
     rating: "",
     res_timming_mon_to_fri: "",
     res_timming_sat_and_sun: "",
+    tags: "",
     image: null,
     imageUrl: "",
   });
@@ -132,11 +134,13 @@ const ViewRestaurants = () => {
       // Reset the state of newRestaurant to its initial empty values
       setNewRestaurant({
         name: "",
-        address: "",
+        city: "",
+        area: "",
         phone: "",
         rating: "",
         res_timming_mon_to_fri: "",
         res_timming_sat_and_sun: "",
+        tags: "",
         image: null,
         imageUrl: "",
       });
@@ -250,9 +254,11 @@ const ViewRestaurants = () => {
       ),
     },
     { field: "name", headerName: "Name", width: 200 },
-    { field: "address", headerName: "Address", width: 250 },
+    { field: "city", headerName: "City", width: 250 },
+    { field: "area", headerName: "Area", width: 250 },
     { field: "phone", headerName: "Phone", width: 150 },
     { field: "rating", headerName: "Rating", width: 120 },
+    { field: "tags", headerName: "Tags", width: 120 },
     { field: "res_timming_mon_to_fri", headerName: "Mon to Fri", width: 200 },
     {
       field: "res_timming_sat_and_sun",
@@ -390,13 +396,20 @@ const ViewRestaurants = () => {
               margin="normal"
             />
             <TextField
-              label="Address"
-              name="address"
-              value={newRestaurant.address}
+              label="City"
+              name="city"
+              value={newRestaurant.city}
               onChange={handleNewRestaurantChange}
               fullWidth
               margin="normal"
             />
+            <TextField
+              label="Area"
+              name="area"
+              value={newRestaurant.area}
+              onChange={handleNewRestaurantChange}
+              fullWidth
+            ></TextField>
             <TextField
               label="Phone"
               name="phone"
@@ -425,6 +438,14 @@ const ViewRestaurants = () => {
               label="Sat and Sun Timming"
               name="res_timming_sat_and_sun"
               value={newRestaurant.res_timming_sat_and_sun}
+              onChange={handleNewRestaurantChange}
+              fullWidth
+              margin="normal"
+            />
+            <TextField
+              label="Tags"
+              name="tags"
+              value={newRestaurant.tags}
               onChange={handleNewRestaurantChange}
               fullWidth
               margin="normal"

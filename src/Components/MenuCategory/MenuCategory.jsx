@@ -30,60 +30,7 @@ const MenuCategory = () => {
   const menu = [
     // Your menu items...
     {
-      // name: "Snacks",
-      image: "/assets/Paratha.avif",
-    },
-    {
-      // name: "Burger",
-      image: "/assets/Omelette.avif",
-    },
-    {
-      // name: "Pizza",
-      image: "/assets/Idli.avif",
-    },
-    {
-      // name: "Pasta",
-      image: "/assets/Dosa.avif",
-    },
-    {
-      // name: "Ice-cream",
-      image: "/assets/Poori.avif",
-    },
-    {
-      // name: "SoftDrink",
-      image: "/assets/Vada.avif",
-    },
-    {
-      // name: "Snacks",
-      image: "/assets/Thepla.avif",
-    },
-    {
-      // name: "Burger",
-      image: "/assets/Khichdi.avif",
-    },
-    {
-      // name: "Pizza",
-      image: "/assets/Vada_Pav.avif",
-    },
-    {
-      // name: "Pasta",
-      image: "/assets/Cakes.avif",
-    },
-    {
-      // name: "Ice-cream",
-      image: "/assets/Coffee.avif",
-    },
-    {
-      // name: "SoftDrink",
-      image: "/assets/Shakes.avif",
-    },
-    {
-      // name: "SoftDrink",
-      image: "/assets/Salad.avif",
-    },
-    {
-      // name: "SoftDrink",
-      image: "/assets/Tea.avif",
+      image: "/assets/North_Indian_4.avif",
     },
     {
       name: "Burger",
@@ -94,13 +41,94 @@ const MenuCategory = () => {
       image: "/assets/Pizza.avif",
     },
     {
+      name: "Biryani",
+      image: "assets/Biryani_2.avif",
+    },
+    {
+      name: "Paratha",
+      image: "/assets/Paratha.avif",
+    },
+    {
       // name: "SoftDrink",
       image: "/assets/Rolls.avif",
+    },
+    {
+      // name: "Pasta",
+      image: "/assets/Dosa.avif",
+    },
+    {
+      // name: "Pizza",
+      image: "/assets/Chinese.avif",
+    },
+    {
+      // name: "SoftDrink",
+      image: "/assets/Vada.avif",
+    },
+    {
+      // name: "SoftDrink",
+      image: "/assets/Shakes.avif",
     },
     {
       // name: "SoftDrink",
       image: "/assets/Chole_Bature.avif",
     },
+    {
+      // name: "SoftDrink",
+      image: "/assets/South_Indian_4.avif",
+    },
+    {
+      // name: "SoftDrink",
+      image: "/assets/Noodles.avif",
+    },
+    {
+      // name: "SoftDrink",
+      image: "/assets/Pasta.avif",
+    },
+    {
+      // name: "Snacks",
+      image: "/assets/Thepla.avif",
+    },
+    {
+      // name: "Burger",
+      image: "/assets/Khichdi.avif",
+    },
+    {
+      // name: "Pasta",
+      image: "/assets/Cakes.avif",
+    },
+    {
+      // name: "Pizza",
+      image: "/assets/Idli.avif",
+    },
+    {
+      // name: "SoftDrink",
+      image: "/assets/Salad.avif",
+    },
+    {
+      // name: "Burger",
+      image: "/assets/Omelette.avif",
+    },
+
+    {
+      // name: "Ice-cream",
+      image: "/assets/Poori.avif",
+    },
+
+    {
+      // name: "Pizza",
+      image: "/assets/Vada_Pav.avif",
+    },
+
+    {
+      // name: "Ice-cream",
+      image: "/assets/Coffee.avif",
+    },
+
+    {
+      // name: "SoftDrink",
+      image: "/assets/Tea.avif",
+    },
+
     {
       // name: "SoftDrink",
       image: "/assets/Gulab_Jamun.avif",

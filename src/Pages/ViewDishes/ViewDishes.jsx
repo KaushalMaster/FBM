@@ -41,6 +41,7 @@ const ViewDishes = () => {
   const [newDish, setNewDish] = useState({
     dish_name: "",
     imageUrl: "",
+    description: "",
     price: "",
     ratings: "",
     res_id: "",
@@ -118,6 +119,7 @@ const ViewDishes = () => {
       const dishData = {
         dish_name: newDish.dish_name,
         imageUrl: imgurl,
+        description: newDish.description,
         price: newDish.price,
         ratings: newDish.ratings,
         res_id: newDish.res_id,
@@ -137,6 +139,7 @@ const ViewDishes = () => {
         setNewDish({
           dish_name: "",
           imageUrl: "",
+          description: "",
           price: "",
           ratings: "",
           res_id: "",
@@ -206,6 +209,7 @@ const ViewDishes = () => {
       const updatedDishData = {
         dish_name: newDish.dish_name,
         imageUrl: imgurl,
+        description: newDish.description,
         price: newDish.price,
         ratings: newDish.ratings,
         res_id: newDish.res_id,
@@ -225,6 +229,7 @@ const ViewDishes = () => {
         setNewDish({
           dish_name: "",
           imageUrl: "",
+          description: "",
           price: "",
           ratings: "",
           res_id: "",
@@ -271,6 +276,7 @@ const ViewDishes = () => {
         />
       ),
     },
+    { field: "description", headerName: "Description", width: 200 },
     { field: "price", headerName: "Price", width: 60 },
     { field: "ratings", headerName: "Ratings", width: 60 },
     { field: "res_id", headerName: "Restaurant ID", width: 200 },
@@ -313,6 +319,17 @@ const ViewDishes = () => {
             name="dish_name"
             value={newDish.dish_name}
             onChange={handleInputChange}
+            fullWidth
+            margin="normal"
+          />
+          <TextField
+            label="Description"
+            variant="outlined"
+            name="description"
+            value={newDish.description}
+            onChange={handleInputChange}
+            multiline
+            rows={4}
             fullWidth
             margin="normal"
           />
@@ -401,6 +418,17 @@ const ViewDishes = () => {
             name="dish_name"
             value={newDish.dish_name}
             onChange={handleInputChange}
+            fullWidth
+            margin="normal"
+          />
+          <TextField
+            label="Description"
+            variant="outlined"
+            name="description"
+            value={newDish.description}
+            onChange={handleInputChange}
+            multiline
+            rows={4}
             fullWidth
             margin="normal"
           />
