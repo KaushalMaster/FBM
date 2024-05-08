@@ -4,6 +4,7 @@ import MenuCategory from "../../Components/MenuCategory/MenuCategory";
 import Restaurants from "../../Components/Restaurants/Restaurants";
 import Cart from "../../Components/Cart/Cart";
 import "./Homepage.css";
+import Footer from "../../Components/Footer/Footer";
 
 const Homepage = () => {
   return (

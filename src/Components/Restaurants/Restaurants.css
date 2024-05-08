@@ -6,13 +6,13 @@
   padding: 0;
   display: inline;
   position: relative;
-  top: 150px;
+  top: 90px;
   left: 60px;
 }
 
 .c_con {
   position: relative;
-  top: -45px;
+  top: -105px;
 }
 
 .card_container {
@@ -61,4 +61,20 @@
     margin-left: 0;
     margin-right: 0;
   }
+}
+
+/* new css */
+.res_name {
+  text-align: left;
+}
+
+.res_rating {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.res_address {
+  text-align: left;
 }

@@ -145,7 +145,7 @@ const MenuCategory = () => {
           breakpoints={{
             // when window width is >= 768px (tablet)
             1440: {
-              slidesPerView: 7,
+              slidesPerView: 6,
               // spaceBetween: 300,
             },
             1024: {

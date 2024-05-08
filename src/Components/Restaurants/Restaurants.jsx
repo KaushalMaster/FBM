@@ -83,6 +83,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
+import { Star } from "@mui/icons-material";
 
 const Restaurants = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -174,7 +175,7 @@ const Restaurants = () => {
               375: {
                 slidesPerView: 2,
                 spaceBetween: 130,
-              }
+              },
             }}
           >
             {restaurants.map((restaurant, index) => (
@@ -192,8 +193,30 @@ const Restaurants = () => {
                         alt={restaurant.name}
                       />
                       <CardContent>
-                        <Typography gutterBottom variant="h7" component="div">
+                        <Typography
+                          gutterBottom
+                          variant="h7"
+                          component="div"
+                          className="res_name"
+                        >
                           {restaurant.name}
+                        </Typography>
+                        <Typography
+                          gutterBottom
+                          variant="h7"
+                          component="div"
+                          className="res_rating"
+                          // name="read-only"
+                        >
+                          <Star></Star>
+                          {restaurant.rating}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          className="res_address"
+                        >
+                          {restaurant.address}
                         </Typography>
                       </CardContent>
                     </CardActionArea>
