@@ -37,6 +37,7 @@ const ViewDishes = () => {
   const [dishes, setDishes] = useState([]);
   const [openAddModal, setOpenAddModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(""); // New state for search query
 
   const [newDish, setNewDish] = useState({
     dish_name: "",
@@ -243,6 +244,11 @@ const ViewDishes = () => {
     }
   };
 
+  // Function to filter dishes based on search query
+  const filteredDishes = dishes.filter((dish) =>
+    dish.dish_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const columns = [
     {
       field: "actions",
@@ -294,6 +300,13 @@ const ViewDishes = () => {
           >
             Add Dish
           </Button>
+          <TextField
+            label="Search"
+            variant="outlined"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{ marginBottom: "20px", marginLeft: "20px" }}
+          />
         </Box>
         {/* <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -301,12 +314,28 @@ const ViewDishes = () => {
           </Grid>
         </Grid> */}
         <div style={{ height: 400, width: "100%" }}>
-          <DataGrid
+          {/* display the dishes data grid until search query is empty else display the filteredDishes */}
+          {!searchQuery ? (
+            <DataGrid
+              rows={dishes}
+              columns={columns}
+              pageSize={5}
+              disableRowSelectionOnClick
+            />
+          ) : (
+            <DataGrid
+              rows={filteredDishes}
+              columns={columns}
+              pageSize={5}
+              disableRowSelectionOnClick
+            />
+          )}
+          {/* <DataGrid
             rows={dishes}
             columns={columns}
             pageSize={5}
             disableRowSelectionOnClick
-          />
+          /> */}
         </div>
       </Container>
       {/* Add a Dish Modal */}

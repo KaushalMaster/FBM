@@ -212,11 +212,25 @@ const Restaurants = () => {
                           {restaurant.rating}
                         </Typography>
                         <Typography
-                          variant="body2"
-                          color="text.secondary"
+                          // variant="body2"
+                          // color="text.secondary"
+                          className="res_tags"
+                        >
+                          {restaurant.tags}.
+                        </Typography>
+                        <Typography
+                          // variant="body2"
+                          // color="text.secondary"
+                          className="res_area"
+                        >
+                          {restaurant.area}.
+                        </Typography>
+                        <Typography
+                          // variant="body2"
+                          // color="text.secondary"
                           className="res_address"
                         >
-                          {restaurant.address}
+                          {restaurant.city}.
                         </Typography>
                       </CardContent>
                     </CardActionArea>

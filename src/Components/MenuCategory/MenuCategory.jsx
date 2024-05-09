@@ -30,6 +30,7 @@ const MenuCategory = () => {
   const menu = [
     // Your menu items...
     {
+      name: "NorthIndian",
       image: "/assets/North_Indian_4.avif",
     },
     {

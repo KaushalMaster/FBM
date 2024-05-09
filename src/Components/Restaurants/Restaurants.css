@@ -78,3 +78,17 @@
 .res_address {
   text-align: left;
 }
+
+.res_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.res_area {
+  text-align: left;
+  font-size: 1.2rem;
+  color: green;
+}
