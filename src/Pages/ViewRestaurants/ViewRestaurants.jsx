@@ -209,20 +209,19 @@ const ViewRestaurants = () => {
     }
   };
 
-  const filteredRestaurants = restaurants.filter((restaurant) => {
-    if (filter === "") {
-      return (
-        restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        restaurant.address.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    } else {
-      return (
-        restaurant.rating === filter &&
-        (restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          restaurant.address.toLowerCase().includes(searchTerm.toLowerCase()))
-      );
-    }
-  });
+  // Function to filter restaurants based on search query
+  const filteredRestaurants = restaurants.filter((restaurant) =>
+    restaurant.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Function to filter restaurants based on rating even with the float ratings
+  const sortedFilteredRestaurants = () => {
+    let tempArr = [...filteredRestaurants];
+    tempArr.sort((a, b) => {
+      return a.rating - b.rating;
+    });
+    return tempArr;
+  };
 
   const columns = [
     {
@@ -300,14 +299,37 @@ const ViewRestaurants = () => {
           </Select>
         </div>
         <div style={{ height: 400, width: "100%" }}>
-          <DataGrid
-            rows={filteredRestaurants}
-            columns={columns}
-            pageSize={5}
-            checkboxSelection
-            disableRowSelectionOnClick
-            getRowId={(row) => row.id}
-          />
+          {/* if the search query is empty then display the restaurants otherwise display the filteredRestaurants based on the search Query */}
+          {!searchTerm ? (
+            <DataGrid
+              rows={restaurants}
+              columns={columns}
+              pageSize={5}
+              checkboxSelection
+              disableRowSelectionOnClick
+              getRowId={(row) => row.id}
+            />
+          ) : (
+            <DataGrid
+              rows={filteredRestaurants}
+              columns={columns}
+              pageSize={5}
+              checkboxSelection
+              disableRowSelectionOnClick
+              getRowId={(row) => row.id}
+            />
+          )}
+          {/* filter the restaurants based on ratings and display in the data grid*/}
+          {filter && (
+            <DataGrid
+              rows={sortedFilteredRestaurants()}
+              columns={columns}
+              pageSize={5}
+              checkboxSelection
+              disableRowSelectionOnClick
+              getRowId={(row) => row.id}
+            />
+          )}
         </div>
 
         <Dialog open={openUpdateModal} onClose={handleCloseUpdateModal}>

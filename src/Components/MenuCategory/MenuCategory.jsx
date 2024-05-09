@@ -38,7 +38,7 @@ const MenuCategory = () => {
       image: "/assets/Burger.avif",
     },
     {
-      // name: "SoftDrink",
+      name: "Pizza",
       image: "/assets/Pizza.avif",
     },
     {
@@ -50,43 +50,43 @@ const MenuCategory = () => {
       image: "/assets/Paratha.avif",
     },
     {
-      // name: "SoftDrink",
+      name: "Roll",
       image: "/assets/Rolls.avif",
     },
     {
-      // name: "Pasta",
+      name: "Dosa",
       image: "/assets/Dosa.avif",
     },
     {
-      // name: "Pizza",
+      name: "Chinese",
       image: "/assets/Chinese.avif",
     },
+    // {
+    //   // name: "SoftDrink",
+    //   image: "/assets/Vada.avif",
+    // },
     {
-      // name: "SoftDrink",
-      image: "/assets/Vada.avif",
-    },
-    {
-      // name: "SoftDrink",
+      name: "Shake",
       image: "/assets/Shakes.avif",
     },
     {
-      // name: "SoftDrink",
+      name: "Chole",
       image: "/assets/Chole_Bature.avif",
     },
     {
-      // name: "SoftDrink",
+      name: "Dosa",
       image: "/assets/South_Indian_4.avif",
     },
     {
-      // name: "SoftDrink",
+      name: "Noodles",
       image: "/assets/Noodles.avif",
     },
     {
-      // name: "SoftDrink",
+      name: "Pasta",
       image: "/assets/Pasta.avif",
     },
     {
-      // name: "Snacks",
+      name: "Thepla",
       image: "/assets/Thepla.avif",
     },
     {
@@ -98,7 +98,7 @@ const MenuCategory = () => {
       image: "/assets/Cakes.avif",
     },
     {
-      // name: "Pizza",
+      name: "Idli",
       image: "/assets/Idli.avif",
     },
     {
@@ -109,14 +109,33 @@ const MenuCategory = () => {
       // name: "Burger",
       image: "/assets/Omelette.avif",
     },
-
+    // REnder in the evening based on time
     {
-      // name: "Ice-cream",
-      image: "/assets/Poori.avif",
+      name: "samosa",
+    },
+    {
+      name: "Sandwich",
+    },
+    {
+      name: "Pakodas",
+    },
+    {
+      name: "Momos",
+    },
+    {
+      name: "Shwarma",
+    },
+    {
+      name: "Juice",
     },
 
+    // {
+    //   // name: "Ice-cream",
+    //   image: "/assets/Poori.avif",
+    // },
+
     {
-      // name: "Pizza",
+      name: "Vadapav",
       image: "/assets/Vada_Pav.avif",
     },
 

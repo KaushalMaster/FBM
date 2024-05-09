@@ -249,6 +249,7 @@ const ViewDishes = () => {
     dish.dish_name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+
   const columns = [
     {
       field: "actions",
