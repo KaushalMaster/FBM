@@ -111,22 +111,28 @@ const MenuCategory = () => {
     },
     // REnder in the evening based on time
     {
-      name: "samosa",
+      name: "Samosa",
+      image: "/assets/Samosas.avif",
     },
     {
       name: "Sandwich",
+      image: "/assets/Sandwich.avif",
     },
     {
       name: "Pakodas",
+      image: "/assets/Pakodas.avif",
     },
     {
       name: "Momos",
+      image: "/assets/Momos.avif",
     },
     {
-      name: "Shwarma",
+      name: "Shawarma",
+      image: "/assets/Shawarma.avif",
     },
     {
       name: "Juice",
+      image: "/assets/Juice.avif",
     },
 
     // {

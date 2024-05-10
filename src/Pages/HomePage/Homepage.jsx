@@ -5,6 +5,7 @@ import Restaurants from "../../Components/Restaurants/Restaurants";
 import Cart from "../../Components/Cart/Cart";
 import "./Homepage.css";
 import Footer from "../../Components/Footer/Footer";
+import MyDishes from "../../Components/MyDishes/MyDishes";
 
 const Homepage = () => {
   return (
@@ -13,6 +14,7 @@ const Homepage = () => {
       <MenuCategory />
       <Restaurants />
       <Restaurants />
+      <MyDishes />
       {/* <div className="con_three">
           <Cart />
         </div> */}
