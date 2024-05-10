@@ -29,6 +29,7 @@ function App() {
             <Route path="/dish_crud/:id" element={<Dishes_crud />} />
             <Route path="/dish:id" element={<FoodDetails />} />
             <Route path="/cart" element={<Run_Cart />} />
+            <Route path="/food" element={<FoodDetails />} />
             <Route
               path="/admin/dashboard/restaurants/data"
               element={<ViewRestaurants />}

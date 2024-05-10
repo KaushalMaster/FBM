@@ -35,23 +35,23 @@ const FoodDetails = () => {
     return () => unsubscribe();
   }, []);
 
-  useEffect(() => {
-    const fetchDishData = async () => {
-      try {
-        const docRef = doc(db, "Dishes", id);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          setDishData(docSnap.data());
-        } else {
-          console.log("No such document!");
-        }
-      } catch (error) {
-        console.error("Error fetching document: ", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchDishData = async () => {
+  //     try {
+  //       const docRef = doc(db, "Dishes", id);
+  //       const docSnap = await getDoc(docRef);
+  //       if (docSnap.exists()) {
+  //         setDishData(docSnap.data());
+  //       } else {
+  //         console.log("No such document!");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching document: ", error);
+  //     }
+  //   };
 
-    fetchDishData();
-  }, [id]);
+  //   fetchDishData();
+  // }, [id]);
 
   // Function to handle incrementing quantity
   const handleIncrement = () => {
@@ -65,58 +65,62 @@ const FoodDetails = () => {
     }
   };
 
-  if (!dishData) {
-    return <div>Loading...</div>;
-  }
+  // if (!dishData) {
+  //   return <div>Loading...</div>;
+  // }
 
-  const data = {
-    // dish_id: id,
-    dish_name: dishData.dish_name,
-    imageUrl: dishData.imageUrl,
-    price: dishData.price,
-    quantity: quantity,
-    res_id: dishData.res_id,
-    userId: user.uid,
-  };
+  // const data = {
+  //   // dish_id: id,
+  //   dish_name: dishData.dish_name,
+  //   imageUrl: dishData.imageUrl,
+  //   price: dishData.price,
+  //   quantity: quantity,
+  //   res_id: dishData.res_id,
+  //   userId: user.uid,
+  // };
 
-  console.log(data);
+  // console.log(data);
 
   // Store the data to the user_cart in firebase
-  const handleAddToCart = async () => {
-    try {
-      const docRef = await addDoc(collection(db, "User_cart"), data);
-      console.log("Document written with ID: ", docRef.id);
-      Swal.fire({
-        icon: "success",
-        title: "Added to cart",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    } catch (error) {
-      console.error("Error adding document: ", error);
-    }
-  };
+  // const handleAddToCart = async () => {
+  //   try {
+  //     const docRef = await addDoc(collection(db, "User_cart"), data);
+  //     console.log("Document written with ID: ", docRef.id);
+  //     Swal.fire({
+  //       icon: "success",
+  //       title: "Added to cart",
+  //       showConfirmButton: false,
+  //       timer: 1500,
+  //     });
+  //   } catch (error) {
+  //     console.error("Error adding document: ", error);
+  //   }
+  // };
 
   return (
     <div className="Main_container">
       <Navbar />
       <div className="food_details">
         <div className="food_img">
-          <img src={dishData.imageUrl} alt="food" />
+          {/* <img src={dishData.imageUrl} alt="food" /> */}
+          <img
+            src="/assets/2 Signature Veg Wraps at 188 each.avif"
+            alt="food"
+          />
         </div>
         <div className="food_info">
-          <h2>{dishData.dish_name}</h2>
+          {/* <h2>{dishData.dish_name}</h2> */}
           <div className="food__description">
-            <p>{dishData.description}</p>
+            {/* <p>{dishData.description}</p> */}
           </div>
 
           <div className="content">
             <div className="price_rating">
               <h3>
                 Price: <CurrencyRupeeIcon />
-                {dishData.price}
+                {/* {dishData.price} */}
               </h3>
-              <span>⭐{dishData.ratings}</span>
+              {/* <span>⭐{dishData.ratings}</span> */}
             </div>
 
             <div className="quantity">
@@ -131,9 +135,8 @@ const FoodDetails = () => {
           </div>
           {/* Rating with stars and quantity */}
 
-          <button className="btn_addtocart" onClick={handleAddToCart}>
-            Add to Cart
-          </button>
+          {/* onClick={handleAddToCart} */}
+          <button className="btn_addtocart">Add to Cart</button>
         </div>
       </div>
       <RecommendedRestaurants />

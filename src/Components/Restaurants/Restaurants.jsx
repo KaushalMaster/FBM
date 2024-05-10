@@ -103,7 +103,7 @@ const Restaurants = () => {
       console.log(restaurantData);
     } catch (error) {
       console.error("Error getting restaurant data: ", error);
-      alert("Error getting restaurant data");
+      // alert("Error getting restaurant data");
     }
   };
 

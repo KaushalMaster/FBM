@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MenuCategory.css";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,8 +24,8 @@ import { Link } from "react-router-dom";
 const MenuCategory = () => {
   const [selectedDish, setSelectedDish] = useState(null);
   const [openModal, setOpenModal] = useState(false);
-  const [filteredMenuItems, setFilteredMenuItems] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [filteredMenuItems, setFilteredMenuItems] = useState([]);
 
   const menu = [
     // Your menu items...
@@ -268,6 +268,7 @@ const MenuCategory = () => {
               }}
               onSlideChange={() => console.log("slide change")}
             >
+              <Typography>No dishes found.</Typography>
               {filteredMenuItems.length === 0 ? (
                 <Typography>No dishes found.</Typography>
               ) : (
@@ -284,7 +285,7 @@ const MenuCategory = () => {
                             component="img"
                             image={dish.imageUrl}
                             alt={dish.dish_name}
-                            sx={{ width: 200 }}
+                            sx={{ width: 200, height: 200 }}
                           />
                           <CardContent>
                             <Typography
