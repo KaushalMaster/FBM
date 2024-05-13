@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { redirect, useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import "./FoodDetails.css";
 import Cart from "../../Components/Cart/Cart";
@@ -19,6 +19,7 @@ import RecommendedRestaurants from "../../Components/RecommendedRestaurants/Reco
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
 const FoodDetails = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [dishData, setDishData] = useState(null);
   const [user, setUser] = useState(null);
@@ -69,8 +70,23 @@ const FoodDetails = () => {
     return <div>Loading...</div>;
   }
 
+  const redirectHome = () => {
+    Swal.fire({
+      title: "Please login",
+      text: "To view the dish content, please login first.",
+      icon: "warning",
+      showCancelButton: false,
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: "OK",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/");
+      }
+    });
+  };
+
   if (!user) {
-    return <div>Loading...</div>;
+    return redirectHome();
   }
   const data = {
     // dish_id: id,
