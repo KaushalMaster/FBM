@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { redirect, useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import "./FoodDetails.css";
-import Cart from "../../Components/Cart/Cart";
-import Restaurants from "../../Components/Restaurants/Restaurants";
 import Swal from "sweetalert2";
 import {
   addDoc,
@@ -17,6 +15,7 @@ import {
 import { auth, db } from "../../Config/firebase-config";
 import RecommendedRestaurants from "../../Components/RecommendedRestaurants/RecommendedRestaurants";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import MyDishes from "../../Components/MyDishes/MyDishes";
 
 const FoodDetails = () => {
   const navigate = useNavigate();
@@ -162,7 +161,12 @@ const FoodDetails = () => {
           </div>
         </div>
       </div>
-      <RecommendedRestaurants />
+      <div className="recommended_restaurants">
+        <RecommendedRestaurants />
+      </div>
+      <div className="recommended_dishes">
+        <MyDishes />
+      </div>
       {/* <Cart /> */}
     </div>
   );

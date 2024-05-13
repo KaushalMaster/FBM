@@ -9,7 +9,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
-import { Star } from "@mui/icons-material";
+import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import { Star } from "@mui/icons-material";   
 
 const MyDishes = () => {
   const [dishes, setDishes] = useState([]);
@@ -54,6 +55,10 @@ const MyDishes = () => {
                 slidesPerView: 2,
                 spaceBetween: 70,
               },
+              375: {
+                slidesPerView: 2,
+                spaceBetween: 130,
+              },
             }}
           >
             {dishes.map((dish, index) => (
@@ -92,7 +97,8 @@ const MyDishes = () => {
                           {dish.description}
                         </Typography> */}
                         <Typography className="dish_price" id="font">
-                          Price: {dish.price}
+                          Price: <CurrencyRupeeIcon />
+                          {dish.price}
                         </Typography>
                       </CardContent>
                     </CardActionArea>

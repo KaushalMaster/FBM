@@ -9,6 +9,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
+import { Star } from "@mui/icons-material";
 
 const RecommendedRestaurants = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -95,6 +96,10 @@ const RecommendedRestaurants = () => {
                 slidesPerView: 2,
                 spaceBetween: 70,
               },
+              375: {
+                slidesPerView: 2,
+                spaceBetween: 130,
+              },
             }}
           >
             <img src="/assets/rightarrow.png" alt="" className="left_arrow" />
@@ -113,8 +118,44 @@ const RecommendedRestaurants = () => {
                         alt={restaurant.name}
                       />
                       <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                          className="res_name"
+                        >
                           {restaurant.name}
+                        </Typography>
+                        <Typography
+                          gutterBottom
+                          variant="h7"
+                          component="div"
+                          className="res_rating"
+                          // name="read-only"
+                        >
+                          <Star />
+                          {restaurant.rating}
+                        </Typography>
+                        <Typography
+                          // variant="body2"
+                          // color="text.secondary"
+                          className="res_tags"
+                        >
+                          {restaurant.tags}.
+                        </Typography>
+                        <Typography
+                          // variant="body2"
+                          // color="text.secondary"
+                          className="res_area"
+                        >
+                          {restaurant.area}.
+                        </Typography>
+                        <Typography
+                          // variant="body2"
+                          // color="text.secondary"
+                          className="res_address"
+                        >
+                          {restaurant.city}.
                         </Typography>
                       </CardContent>
                     </CardActionArea>

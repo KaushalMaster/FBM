@@ -25,6 +25,8 @@ import {
   where,
   getDocs,
   documentId,
+  getDoc,
+  doc,
 } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { SwiperSlide, Swiper } from "swiper/react";
@@ -135,37 +137,6 @@ const Navbar = (props) => {
     setIsSearchBarOpen(false); // Close the search bar
   };
 
-  // const handleSearch = async () => {
-  //   if (searchQuery.length > 0) {
-  //     const querySnapshot = await getDocs(collection(db, "Dishes"));
-  //     const fetchedDishes = [];
-  //     querySnapshot.forEach((doc) => {
-  //       fetchedDishes.push({ id: doc.id, ...doc.data() });
-  //     });
-
-  //     const restaurantIds = fetchedDishes
-  //       .filter((dish) => dish.dish_name.includes(searchQuery))
-  //       .map((dish) => dish.res_id);
-
-  //     const restaurantRef = collection(db, "Restaurants");
-  //     const restaurantQuery = query(
-  //       restaurantRef,
-  //       where(documentId(), "in", restaurantIds)
-  //     );
-  //     const restaurantsData = await getDocs(restaurantQuery);
-
-  //     let foundRestaurants = [];
-  //     restaurantsData.forEach((doc) => {
-  //       foundRestaurants.push({ id: doc.id, ...doc.data() });
-  //     });
-
-  //     setFilteredRestaurants(foundRestaurants);
-  //     setShowResults(true);
-  //     setModalOpen(true);
-  //     setIsSearchBarOpen(false); // Close the search bar after searching
-  //   }
-  // };
-
   const handleSearch = async () => {
     if (searchQuery.length > 0) {
       const querySnapshot = await getDocs(collection(db, "Dishes"));
@@ -178,26 +149,17 @@ const Navbar = (props) => {
         .filter((dish) => dish.dish_name.includes(searchQuery))
         .map((dish) => dish.res_id);
 
-      // Split the restaurantIds into chunks of 30 or less
-      const chunks = [];
-      while (restaurantIds.length > 0) {
-        chunks.push(restaurantIds.splice(0, 30));
-      }
+      const restaurantRef = collection(db, "Restaurants");
+      const restaurantQuery = query(
+        restaurantRef,
+        where(documentId(), "in", restaurantIds)
+      );
+      const restaurantsData = await getDocs(restaurantQuery);
 
-      // Fetch restaurants for each chunk of restaurantIds
-      const foundRestaurants = [];
-      for (const chunk of chunks) {
-        const restaurantRef = collection(db, "Restaurants");
-        const restaurantQuery = query(
-          restaurantRef,
-          where(documentId(), "in", chunk)
-        );
-        const restaurantsData = await getDocs(restaurantQuery);
-
-        restaurantsData.forEach((doc) => {
-          foundRestaurants.push({ id: doc.id, ...doc.data() });
-        });
-      }
+      let foundRestaurants = [];
+      restaurantsData.forEach((doc) => {
+        foundRestaurants.push({ id: doc.id, ...doc.data() });
+      });
 
       setFilteredRestaurants(foundRestaurants);
       setShowResults(true);
@@ -205,6 +167,94 @@ const Navbar = (props) => {
       setIsSearchBarOpen(false); // Close the search bar after searching
     }
   };
+
+  // const handleSearch = async () => {
+  //   if (searchQuery.length > 0) {
+  //     const querySnapshot = await getDocs(collection(db, "Dishes"));
+  //     const fetchedDishes = [];
+  //     querySnapshot.forEach((doc) => {
+  //       fetchedDishes.push({ id: doc.id, ...doc.data() });
+  //     });
+
+  //     const restaurantIds = fetchedDishes
+  //       .filter((dish) => dish.dish_name.includes(searchQuery))
+  //       .map((dish) => dish.res_id);
+
+  //     // // Split the restaurantIds into chunks of 30 or less
+  //     // const chunks = [];
+  //     // while (restaurantIds.length > 0) {
+  //     //   chunks.push(restaurantIds.splice(0, 30));
+  //     // }
+
+  //     // Fetch restaurants for each chunk of restaurantIds
+  //     const foundRestaurants = [];
+  //     // for (const chunk of chunks) {
+  //     //   const restaurantRef = collection(db, "Restaurants");
+  //     //   const restaurantQuery = query(
+  //     //     restaurantRef,
+  //     //     where(documentId(), "in", restaurantIds)
+  //     //   );
+  //     //   const restaurantsData = await getDocs(restaurantQuery);
+
+  //     //   restaurantsData.forEach((doc) => {
+  //     //     foundRestaurants.push({ id: doc.id, ...doc.data() });
+  //     //   });
+  //     // }
+
+  //     const restaurantRef = collection(db, "Restaurants");
+  //       const restaurantQuery = query(
+  //         restaurantRef,
+  //         where(documentId(), "in", restaurantIds)
+  //       );
+  //       const restaurantsData = await getDocs(restaurantQuery);
+
+  //       restaurantsData.forEach((doc) => {
+  //         foundRestaurants.push({ id: doc.id, ...doc.data() });
+  //       });
+
+  //     setFilteredRestaurants(foundRestaurants);
+  //     setShowResults(true);
+  //     setModalOpen(true);
+  //     setIsSearchBarOpen(false); // Close the search bar after searching
+  //   }
+  // };
+
+  // const handleSearch = async () => {
+  //   if (searchQuery.length > 0) {
+  //     const querySnapshot = await getDocs(collection(db, "Dishes"));
+  //     const fetchedDishes = [];
+  //     querySnapshot.forEach((doc) => {
+  //       fetchedDishes.push({ id: doc.id, ...doc.data() });
+  //     });
+
+  //     const restaurantIds = fetchedDishes
+  //       .filter((dish) => dish.dish_name.includes(searchQuery))
+  //       .map((dish) => dish.res_id);
+
+  //     console.log(restaurantIds);
+
+  //     // Fetch restaurants based on the filtered restaurant IDs
+  //     const foundRestaurants = [];
+  //     for (const resId of restaurantIds) {
+  //       const restaurantRef = doc(db, "Restaurants", resId); // Correct reference
+
+  //       const restaurantDoc = await getDoc(restaurantRef);
+  //       if (restaurantDoc.exists()) {
+  //         foundRestaurants.push({
+  //           id: restaurantDoc.id,
+  //           ...restaurantDoc.data(),
+  //         });
+  //       }
+  //     }
+
+  //     console.log(foundRestaurants);
+
+  //     setFilteredRestaurants(foundRestaurants);
+  //     setShowResults(true);
+  //     setModalOpen(true);
+  //     setIsSearchBarOpen(false); // Close the search bar after searching
+  //   }
+  // };
 
   const handleCloseModal = () => {
     setModalOpen(false);
