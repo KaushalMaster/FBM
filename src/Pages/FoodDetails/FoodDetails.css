@@ -50,6 +50,7 @@
   gap: 138px;
   position: relative;
   left: 40px;
+  margin-bottom: 10px;
 }
 
 .content span {
@@ -188,7 +189,7 @@
     font-size: 20px;
     font-weight: 500;
     position: relative;
-    right: 80%;
+    right: 58%;
     top: 15px;
   }
 
@@ -216,7 +217,7 @@
     align-items: center;
     padding: 20px;
     /* width: 97%; */
-    width: 280px;
+    width: 50px;
     background: rgb(214, 214, 49);
     outline: none;
     border: none;
@@ -225,7 +226,7 @@
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    left: -1px;
+    left: 12px;
   }
 
   .btn_addtocart:hover {
@@ -315,13 +316,19 @@
     padding: 0px 30px;
   }
 
+  .btn_addtocart_con {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .btn_addtocart {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     /* width: 97%; */
-    width: 320px;
+    width: 440px; 
     background: rgb(214, 214, 49);
     outline: none;
     border: none;
@@ -330,7 +337,7 @@
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    left: 10px;
+    left: -10px;
   }
 
   .btn_addtocart:hover {
