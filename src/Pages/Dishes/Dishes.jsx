@@ -18,7 +18,7 @@ const Dishes = () => {
   const navigate = useNavigate();
 
   const user_id = auth.currentUser?.uid; // Access user ID only if user is authenticated
-
+  console.log(user_id);
   useEffect(() => {
     setUserId(user_id);
   }, [user_id]);
