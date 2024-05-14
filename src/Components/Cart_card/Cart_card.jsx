@@ -220,7 +220,9 @@ const CartCard = (props) => {
                 sx={{ alignSelf: "right" }}
               >
                 {/* Calculate and display the total price */}
-                {`${item.price * item.quantity}`}
+                <CurrencyRupeeIcon className="currencyIcon" />
+
+                {`RS.${item.price * item.quantity}`}
               </Typography>
             </Box>
           </CardContent>

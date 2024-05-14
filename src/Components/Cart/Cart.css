@@ -3,8 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background: rgb(184, 184, 184); */
-
+  background: rgba(255, 255, 255, 0.763);
   width: 25%;
 
   position: fixed;
@@ -17,8 +16,6 @@
   font-weight: 500;
   padding: 10px 0px 20px 0px;
 }
-
-
 .cart_items {
   display: flex;
   flex-direction: column;
@@ -42,7 +39,7 @@
   margin-right: 10px;
 } */
 
-.currencyIcon{
+.currencyIcon {
   position: relative;
   top: 3px;
 }
