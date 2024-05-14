@@ -24,6 +24,7 @@ const Dishes = () => {
   }, [user_id]);
 
   useEffect(() => {
+    console.log("dishes");
     const getDishes = async () => {
       try {
         const q = query(

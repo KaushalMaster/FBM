@@ -15,6 +15,7 @@ const RecommendedRestaurants = () => {
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
+    console.log("restaurants");
     getRestaurants();
   }, []);
 

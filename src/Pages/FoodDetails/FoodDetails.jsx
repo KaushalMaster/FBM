@@ -36,6 +36,7 @@ const FoodDetails = () => {
   }, []);
 
   useEffect(() => {
+    console.log("dish details")
     const fetchDishData = async () => {
       try {
         const docRef = doc(db, "Dishes", id);

@@ -3,13 +3,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(184, 184, 184);
+  /* background: rgb(184, 184, 184); */
+
   width: 25%;
 
   position: fixed;
   top: 10%;
   right: 7%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+.cart_title {
+  font-size: 30px;
+  font-weight: 500;
+  padding: 10px 0px 20px 0px;
+}
+
 
 .cart_items {
   display: flex;
@@ -33,6 +41,11 @@
 /* .total_amt h3 {
   margin-right: 10px;
 } */
+
+.currencyIcon{
+  position: relative;
+  top: 3px;
+}
 
 .btn_checkout {
   display: flex;

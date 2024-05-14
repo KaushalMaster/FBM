@@ -33,6 +33,7 @@ const AddRestaurant = () => {
   });
 
   useEffect(() => {
+    console.log("restaurant");
     getRestaurantData();
   }, []);
 

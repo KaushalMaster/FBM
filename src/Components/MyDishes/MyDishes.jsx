@@ -10,12 +10,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
-import { Star } from "@mui/icons-material";   
+import { Star } from "@mui/icons-material";
 
 const MyDishes = () => {
   const [dishes, setDishes] = useState([]);
 
   useEffect(() => {
+    console.log("dieshes");
     getDishes();
   }, []);
 

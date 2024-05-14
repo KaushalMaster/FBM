@@ -23,6 +23,7 @@ import {
 import { db } from "../../Config/firebase-config";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthContext/AuthContext";
+import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
 const CartCard = (props) => {
   const { currentUser } = useContext(AuthContext);
@@ -30,6 +31,7 @@ const CartCard = (props) => {
   const [totalAmount, setTotalAmount] = useState(0);
 
   useEffect(() => {
+    console.log("effext");
     fetchCartDetails();
   }, [currentUser]);
 
@@ -143,7 +145,10 @@ const CartCard = (props) => {
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   Price:{" "}
-                  <span style={{ color: "lightgray" }}>{`$${item.price}`}</span>
+                  <span style={{ color: "lightgray" }}>
+                    <CurrencyRupeeIcon className="currencyIcon" />
+                    {`${item.price}`}
+                  </span>
                 </Typography>
               </Box>
               <Box
@@ -215,7 +220,7 @@ const CartCard = (props) => {
                 sx={{ alignSelf: "right" }}
               >
                 {/* Calculate and display the total price */}
-                {`$${item.price * item.quantity}`}
+                {`${item.price * item.quantity}`}
               </Typography>
             </Box>
           </CardContent>
