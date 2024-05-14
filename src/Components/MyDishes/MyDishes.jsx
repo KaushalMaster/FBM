@@ -33,6 +33,25 @@ const MyDishes = () => {
       alert("Error getting dish data");
     }
   };
+
+  // function to shuffle array
+  const shuffleArray = (array) => {
+    let currentIndex = array.length,
+      randomIndex;
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+    return array;
+  };
+
+  // Assuming 'dishes' is an array of dishes object
+  const shuffledDishes = shuffleArray(dishes);
+
   return (
     <>
       <div className="dish_title">Dishes:</div>
@@ -62,7 +81,7 @@ const MyDishes = () => {
               },
             }}
           >
-            {dishes.map((dish, index) => (
+            {shuffledDishes.map((dish, index) => (
               <SwiperSlide key={index} enableMouseEvents>
                 <Link
                   to={`Dish/Dish_Details/${dish.id}`} // Pass dish ID as URL parameter

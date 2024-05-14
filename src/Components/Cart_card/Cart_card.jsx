@@ -217,12 +217,15 @@ const CartCard = (props) => {
               <Typography
                 variant="body2"
                 color="text.secondary"
-                sx={{ alignSelf: "right" }}
+                sx={{ alignSelf: "right", display: "flex" }}
               >
-                {/* Calculate and display the total price */}
-                <CurrencyRupeeIcon className="currencyIcon" />
+                <CurrencyRupeeIcon
+                  className="currencyIcon"
+                  sx={{ fontSize: 15 }}
+                />
 
-                {`RS.${item.price * item.quantity}`}
+                {/* Calculate and display the total price */}
+                {`${item.price * item.quantity}`}
               </Typography>
             </Box>
           </CardContent>

@@ -29,10 +29,10 @@ const MenuCategory = () => {
 
   const menu = [
     // Your menu items...
-    {
-      name: "NorthIndian",
-      image: "/assets/North_Indian_4.avif",
-    },
+    // {
+    //   name: "NorthIndian",
+    //   image: "/assets/North_Indian_4.avif",
+    // },
     {
       name: "Burger",
       image: "/assets/Burger.avif",
@@ -66,7 +66,7 @@ const MenuCategory = () => {
     //   image: "/assets/Vada.avif",
     // },
     {
-      name: "Shake",
+      name: "Shakes",
       image: "/assets/Shakes.avif",
     },
     {
@@ -89,10 +89,10 @@ const MenuCategory = () => {
       name: "Thepla",
       image: "/assets/Thepla.avif",
     },
-    {
-      // name: "Burger",
-      image: "/assets/Khichdi.avif",
-    },
+    // {
+    //   // name: "Burger",
+    //   image: "/assets/Khichdi.avif",
+    // },
     {
       // name: "Pasta",
       image: "/assets/Cakes.avif",
@@ -101,14 +101,14 @@ const MenuCategory = () => {
       name: "Idli",
       image: "/assets/Idli.avif",
     },
-    {
-      // name: "SoftDrink",
-      image: "/assets/Salad.avif",
-    },
-    {
-      // name: "Burger",
-      image: "/assets/Omelette.avif",
-    },
+    // {
+    //   // name: "SoftDrink",
+    //   image: "/assets/Salad.avif",
+    // },
+    // {
+    //   // name: "Burger",
+    //   image: "/assets/Omelette.avif",
+    // },
     // REnder in the evening based on time
     {
       name: "Samosa",

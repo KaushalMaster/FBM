@@ -107,6 +107,18 @@ const Restaurants = () => {
     }
   };
 
+  // Function to shuffle an array
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
+  // Assuming 'restaurants' is an array of restaurant objects
+  const shuffledRestaurants = shuffleArray(restaurants);
+
   return (
     <>
       <div className="res_title">Restaurants:</div>
@@ -178,7 +190,68 @@ const Restaurants = () => {
               },
             }}
           >
-            {restaurants.map((restaurant, index) => (
+            {/* {restaurants.map((restaurant, index) => (
+              <SwiperSlide key={index} enableMouseEvents>
+                <Link
+                  to={`/dishes/${restaurant.id}`} // Pass restaurant ID as URL parameter
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <Card className="card">
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image={restaurant.imageUrl}
+                        alt={restaurant.name}
+                      />
+                      <CardContent>
+                        <Typography
+                          gutterBottom
+                          variant="h7"
+                          component="div"
+                          className="res_name"
+                        >
+                          {restaurant.name}
+                        </Typography>
+                        <Typography
+                          gutterBottom
+                          variant="h7"
+                          component="div"
+                          className="res_rating"
+                          // name="read-only"
+                        >
+                          <Star></Star>
+                          {restaurant.rating}
+                        </Typography>
+                        <Typography
+                          // variant="body2"
+                          // color="text.secondary"
+                          className="res_tags"
+                        >
+                          {restaurant.tags}.
+                        </Typography>
+                        <Typography
+                          // variant="body2"
+                          // color="text.secondary"
+                          className="res_area"
+                        >
+                          {restaurant.area}.
+                        </Typography>
+                        <Typography
+                          // variant="body2"
+                          // color="text.secondary"
+                          className="res_address"
+                        >
+                          {restaurant.city}.
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Link>
+              </SwiperSlide>
+            ))} */}
+
+            {shuffledRestaurants.map((restaurant, index) => (
               <SwiperSlide key={index} enableMouseEvents>
                 <Link
                   to={`/dishes/${restaurant.id}`} // Pass restaurant ID as URL parameter
